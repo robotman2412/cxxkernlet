@@ -1,0 +1,6 @@
+[submodule "freestanding-c-hdrs"]
+	path = lib/freestanding-c-hdrs
+	url = https://github.com/osdev0/freestanding-c-hdrs
+[submodule "lib/freestanding-cxx-hdrs"]
+	path = lib/freestanding-cxx-hdrs
+	url = https://github.com/osdev0/freestanding-cxx-hdrs-gnu
