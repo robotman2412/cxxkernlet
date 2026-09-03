@@ -4,3 +4,6 @@
 [submodule "lib/freestanding-cxx-hdrs"]
 	path = lib/freestanding-cxx-hdrs
 	url = https://github.com/osdev0/freestanding-cxx-hdrs-gnu
+[submodule "lib/nanoprintf"]
+	path = lib/nanoprintf
+	url = https://github.com/charlesnicholson/nanoprintf

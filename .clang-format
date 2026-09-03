@@ -79,19 +79,19 @@ SortIncludes: CaseInsensitive
 IncludeBlocks: Regroup
 IncludeCategories:
   # External headers
-  - Regex: '^\<('
+  - Regex: '^<'
     Priority: 3
     SortPriority: 0
     CaseSensitive: false
 
   # System headers
-  - Regex: '^\<(std.*|inttypes)'
+  - Regex: '^\"lib/'
     Priority: 2
     SortPriority: 0
     CaseSensitive: false
 
   # Assume project header
-  - Regex: '^\".*'
+  - Regex: '^\"'
     Priority: 1
     SortPriority: 0
     CaseSensitive: false
@@ -111,6 +111,8 @@ AlignEscapedNewlines: Right
 AllowShortCaseLabelsOnASingleLine: true # don't split up "case x: return value;"
 
 BreakBeforeTernaryOperators: true
+
+AccessModifierOffset: -4
 
 # default values:
 
