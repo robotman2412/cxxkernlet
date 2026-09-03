@@ -28,8 +28,14 @@ SECTIONS
 
     __start_rodata = .;
     .rodata : {
+        KEEP(*(.requests_start))
+        KEEP(*(.requests))
+        KEEP(*(.requests_end))
         *(.rodata .rodata.*)
     } :rodata
+    .dynamic : { *(.dynamic) } :rodata :dynamic
+    .got : { *(.got) } :rodata
+    .got.plt : { *(.got.plt) } :rodata
     .dynstr : { *(.dynstr) } :rodata
     .dynsym : { *(.dynsym) } :rodata
     .rela.dyn : { *(.rela.dyn) } :rodata
@@ -37,21 +43,17 @@ SECTIONS
     __stop_rodata = .;
 
     __start_data = .;
-    .dynamic : { *(.dynamic) } :data :dynamic
-    .got : { *(.got) } :data
-    .got.plt : { *(.got.plt) } :data
     .data : {
-        /* Limine requests. */
-        KEEP(*(.requests_start))
-        KEEP(*(.requests))
-        KEEP(*(.requests_end))
+        __start_initgraph = .;
+        KEEP(*(.initgraph .initgraph.*))
+        __stop_initgraph = .;
         *(.data .data.*)
+        *(COMMON)
     } :data
 
     /* Add zero-initialized memory last to avoid padding. */
     .bss : {
         *(.bss .bss.*)
-        *(COMMON)
     } :data
     . = ALIGN(4096);
     __stop_data = .;
