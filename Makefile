@@ -15,7 +15,7 @@ clean:
 qemu:
 	qemu-system-x86_64 \
 		-s $(QEMU_FLAGS) \
-		-M q35 -smp 1 -m 2G \
+		-M q35,smm=off -smp 1 -m 2G \
 		-serial mon:stdio \
 		-drive format=raw,file=image/image.hdd
 

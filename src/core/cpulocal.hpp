@@ -15,6 +15,9 @@ struct CpuLocal {
     ArchCpuLocal   arch;
     sched::Thread *thread;
 
+    consteval CpuLocal() : arch(ArchCpuLocal()), thread(nullptr) {
+    }
+
     static inline CpuLocal *get();
 
     static inline void set(CpuLocal *ptr);

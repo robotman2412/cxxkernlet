@@ -34,6 +34,7 @@ add_link_options(
 
 add_executable(kernel
     src/${arch}/arch/core/sched.cpp
+    src/${arch}/arch/core/spinup.cpp
     src/${arch}/arch/log/log.cpp
     
     src/core/sched.cpp
@@ -41,6 +42,7 @@ add_executable(kernel
     src/init/init.cpp
     src/log/nanoprintf.c
     src/log/log.cpp
+    src/misc/panic.cpp
 )
 
 include_directories(

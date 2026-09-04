@@ -21,4 +21,8 @@ void printf(char const *fmt, ...) {
     va_end(l);
 }
 
+void vprintf(char const *fmt, va_list vl) {
+    npf_vpprintf([](int c, void *) { putc(c); }, nullptr, fmt, vl);
+}
+
 } // namespace log

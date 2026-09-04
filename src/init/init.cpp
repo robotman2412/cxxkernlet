@@ -2,6 +2,7 @@
 #include "init/init.hpp"
 
 #include "log/log.hpp"
+#include "misc/panic.hpp"
 
 namespace init {
 
@@ -48,7 +49,7 @@ void init() {
                     log::printf("  %s\n", task->name);
                 }
             }
-            while (1);
+            misc::panic::panic();
         }
     }
 
